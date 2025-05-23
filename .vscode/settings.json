@@ -1,0 +1,7 @@
+{
+    "files.autoSave": "afterDelay",
+    "[rust]": {
+        "editor.semanticHighlighting.enabled": true,
+        "editor.defaultFormatter": "rust-lang.rust-analyzer"
+    },
+}
