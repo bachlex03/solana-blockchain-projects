@@ -1,7 +1,7 @@
 cargo-features = ["edition2024"]
 
 [package]
-name = "hello_world"
+name = "blockchain"
 version = "0.1.0"
 edition = "2024"
 
@@ -9,5 +9,5 @@ edition = "2024"
 solana-program = "2.2.1"
 
 [lib]
-name = "hello_world"
+name = "hello_world_v2"
 crate-type = ["cdylib", "lib"]

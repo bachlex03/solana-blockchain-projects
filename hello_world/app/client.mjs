@@ -6,7 +6,7 @@ import {
 } from "@solana/web3.js";
 import { getKeypairFromFile } from "@solana-developers/helpers";
 
-const programId = new PublicKey("Ap6vYz56ZzDdmXvxyU6KMrZuPj8Yc1VjByiU1ng42qLF")
+const programId = new PublicKey("3GkjcNj8NpfnUs8qiYGbcttfERNupxP9N28JFMbA6Guv")
 console.log("Program ID: ", programId)
 console.log("Program ID: ", programId.toBase58())
 

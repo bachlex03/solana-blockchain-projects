@@ -4,4 +4,7 @@
         "editor.semanticHighlighting.enabled": true,
         "editor.defaultFormatter": "rust-lang.rust-analyzer"
     },
+    "rust-analyzer.linkedProjects": [
+        "/home/bale/repositories/solana-blockchain/hello_world_v2/blockchain/Cargo.toml",
+    ]
 }
