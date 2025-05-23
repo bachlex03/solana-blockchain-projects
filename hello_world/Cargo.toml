@@ -1,3 +1,5 @@
+cargo-features = ["edition2024"]
+
 [package]
 name = "hello_world"
 version = "0.1.0"
@@ -9,3 +11,5 @@ solana-program = "2.2.1"
 [lib]
 name = "hello_world"
 crate-type = ["cdylib", "lib"]
+
+cargo-features = ["edition2024"]
