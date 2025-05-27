@@ -7,7 +7,8 @@
   "rust-analyzer.linkedProjects": [
     // "/home/bale/repositories/solana-blockchain/hello_world_v2/blockchain/Cargo.toml",
     "/Users/bale/Documents/Workspace/blockchain/solana-blockchain-projects/hello_world_v2/blockchain/Cargo.toml",
-    "/Users/bale/Documents/Workspace/blockchain/solana-blockchain-projects/hello_world/Cargo.toml"
+    "/Users/bale/Documents/Workspace/blockchain/solana-blockchain-projects/hello_world/Cargo.toml",
+    "/Users/bale/Documents/Workspace/blockchain/solana-blockchain-projects/pj1_counter/Cargo.toml"
   ],
   "files.readonlyInclude": {
     "**/.cargo/registry/src/**/*.rs": true,
