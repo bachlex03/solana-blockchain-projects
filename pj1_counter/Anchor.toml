@@ -6,13 +6,17 @@ resolution = true
 skip-lint = false
 
 [programs.localnet]
-pj1_counter = "Ak7pN2kCcUwntyNNThgGv1vqTWhbVxfNQJrEjCr1GH5t"
+pj1_counter = "9ivQ9UkUpATDYmhBxVwjXTMPvbnd32bzReqQhvZKamEF"
+
+[programs.devnet]
+pj1_counter = "9ivQ9UkUpATDYmhBxVwjXTMPvbnd32bzReqQhvZKamEF"
+
 
 [registry]
 url = "https://api.apr.dev"
 
 [provider]
-cluster = "localnet"
+cluster = "devnet"
 wallet = "~/.config/solana/id.json"
 
 [scripts]
