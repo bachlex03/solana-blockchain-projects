@@ -1,40 +1,41 @@
 use anchor_lang::prelude::*;
-use std::mem;
-
+use std::mem::size_of;
 declare_id!("EeYjBR5CXBe5BML86bf5e71uUUHojYSYvQ8r3Htiqo52");
 
 #[program]
 pub mod pj2_escrow_pda {
     use super::*;
 
-    pub fn initialize(ctx: Context<InitializeEscrow>) -> Result<()> {
+    pub fn create_escrow(ctx: Context<CreateEscrow>, amount: u64) -> Result<()> {
         let escrow_acc = &mut ctx.accounts.escrow;
 
         escrow_acc.from = ctx.accounts.from.key();
 
         escrow_acc.to = ctx.accounts.to.key();
 
-        escrow_acc.amount = 0;
+        escrow_acc.amount = amount;
+
+        escrow_acc.bump = ctx.bumps.escrow;
 
         Ok(())
     }
 }
 
 #[derive(Accounts)]
-pub struct InitializeEscrow<'info> {
+pub struct CreateEscrow<'info> {
     #[account(
         init,
-        seeds = [b"escrow".as_ref(), from.key().as_ref(), to.key().as_ref()],
+        seeds = [b"escrow", from.key().as_ref(), to.key().as_ref()],
         bump,
         payer = from,
-        space = mem::size_of::<EscrowAccount>())
-    ]
+        space = 8 + size_of::<EscrowAccount>()
+    )]
     pub escrow: Account<'info, EscrowAccount>,
 
     #[account(mut)]
     pub from: Signer<'info>,
 
-    /// CHECK: This is the recipient's account, used only for PDA derivation and not deserialized.
+    /// CHECK: safe
     #[account(mut)]
     pub to: AccountInfo<'info>,
 
@@ -42,10 +43,13 @@ pub struct InitializeEscrow<'info> {
 }
 
 #[account]
+#[derive(InitSpace)]
 pub struct EscrowAccount {
     pub from: Pubkey,
 
     pub to: Pubkey,
 
     pub amount: u64,
+
+    pub bump: u8,
 }

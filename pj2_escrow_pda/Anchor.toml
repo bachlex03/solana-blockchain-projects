@@ -8,11 +8,14 @@ skip-lint = false
 [programs.localnet]
 pj2_escrow_pda = "EeYjBR5CXBe5BML86bf5e71uUUHojYSYvQ8r3Htiqo52"
 
+[programs.devnet]
+pj2_escrow_pda = "EeYjBR5CXBe5BML86bf5e71uUUHojYSYvQ8r3Htiqo52"
+
 [registry]
 url = "https://api.apr.dev"
 
 [provider]
-cluster = "localnet"
+cluster = "devnet"
 wallet = "~/.config/solana/id.json"
 
 [scripts]

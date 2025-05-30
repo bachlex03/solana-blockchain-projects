@@ -1,0 +1,177 @@
+export type Pj2EscrowPda = {
+  address: "EeYjBR5CXBe5BML86bf5e71uUUHojYSYvQ8r3Htiqo52";
+  metadata: {
+    name: "pj2EscrowPda";
+    version: "0.1.0";
+    spec: "0.1.0";
+    description: "Created with Anchor";
+  };
+  instructions: [
+    {
+      name: "createEscrow";
+      discriminator: [253, 215, 165, 116, 36, 108, 68, 80];
+      accounts: [
+        {
+          name: "escrow";
+          writable: true;
+          pda: {
+            seeds: [
+              {
+                kind: "const";
+                value: [101, 115, 99, 114, 111, 119];
+              },
+              {
+                kind: "account";
+                path: "from";
+              },
+              {
+                kind: "account";
+                path: "to";
+              }
+            ];
+          };
+        },
+        {
+          name: "from";
+          writable: true;
+          signer: true;
+        },
+        {
+          name: "to";
+          writable: true;
+        },
+        {
+          name: "systemProgram";
+          address: "11111111111111111111111111111111";
+        }
+      ];
+      args: [
+        {
+          name: "amount";
+          type: "u64";
+        }
+      ];
+    }
+  ];
+  accounts: [
+    {
+      name: "escrowAccount";
+      discriminator: [36, 69, 48, 18, 128, 225, 125, 135];
+    }
+  ];
+  types: [
+    {
+      name: "escrowAccount";
+      type: {
+        kind: "struct";
+        fields: [
+          {
+            name: "from";
+            type: "pubkey";
+          },
+          {
+            name: "to";
+            type: "pubkey";
+          },
+          {
+            name: "amount";
+            type: "u64";
+          },
+          {
+            name: "bump";
+            type: "u8";
+          }
+        ];
+      };
+    }
+  ];
+};
+
+export const IDL: Pj2EscrowPda = {
+  address: "EeYjBR5CXBe5BML86bf5e71uUUHojYSYvQ8r3Htiqo52",
+  metadata: {
+    name: "pj2EscrowPda",
+    version: "0.1.0",
+    spec: "0.1.0",
+    description: "Created with Anchor",
+  },
+  instructions: [
+    {
+      name: "createEscrow",
+      discriminator: [253, 215, 165, 116, 36, 108, 68, 80],
+      accounts: [
+        {
+          name: "escrow",
+          writable: true,
+          pda: {
+            seeds: [
+              {
+                kind: "const",
+                value: [101, 115, 99, 114, 111, 119],
+              },
+              {
+                kind: "account",
+                path: "from",
+              },
+              {
+                kind: "account",
+                path: "to",
+              },
+            ],
+          },
+        },
+        {
+          name: "from",
+          writable: true,
+          signer: true,
+        },
+        {
+          name: "to",
+          writable: true,
+        },
+        {
+          name: "systemProgram",
+          address: "11111111111111111111111111111111",
+        },
+      ],
+      args: [
+        {
+          name: "amount",
+          type: "u64",
+        },
+      ],
+    },
+  ],
+  accounts: [
+    {
+      name: "escrowAccount",
+      discriminator: [36, 69, 48, 18, 128, 225, 125, 135],
+    },
+  ],
+  types: [
+    {
+      name: "escrowAccount",
+      type: {
+        kind: "struct",
+        fields: [
+          {
+            name: "from",
+            type: "pubkey",
+          },
+          {
+            name: "to",
+            type: "pubkey",
+          },
+          {
+            name: "amount",
+            type: "u64",
+          },
+          {
+            name: "bump",
+            type: "u8",
+          },
+        ],
+      },
+    },
+  ],
+};

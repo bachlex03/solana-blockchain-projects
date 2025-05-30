@@ -60,10 +60,6 @@ const InitializedButton = ({ demoAccount }: InitializedButtonProps) => {
 
       console.log("Transaction confirmed:", tx);
 
-      // const tx = await sendTransaction(transaction, connection, {
-      //   signers: [demoAccount],
-      // });
-
       console.log("Transaction sent:", tx);
 
       const account = await program.account.counter.fetch(
