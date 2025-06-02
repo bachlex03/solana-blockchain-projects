@@ -1,8 +1,10 @@
+cargo-features = ["edition2024"]
+
 [package]
 name = "pj2_escrow_pda"
 version = "0.1.0"
 description = "Created with Anchor"
-edition = "2021"
+edition = "2024"
 
 [lib]
 crate-type = ["cdylib", "lib"]
